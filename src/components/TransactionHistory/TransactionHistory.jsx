@@ -1,5 +1,3 @@
-import clsx from "clsx";
-import s from "./TransactionHistory.module.css";
 import TransactionHistoryItem from "./TransactionHistoryItem";
 
 const TransactionHistory = ({ items }) => {
@@ -15,11 +13,12 @@ const TransactionHistory = ({ items }) => {
 
       <tbody>
         {items.map((transaction) => (
-            <TransactionHistoryItem
-              type={transaction.type}
-              amount={transaction.amount}
-              currency={transaction.currency}
-            />
+          <TransactionHistoryItem
+            type={transaction.type}
+            amount={transaction.amount}
+            currency={transaction.currency}
+            key={transaction.id}
+          />
         ))}
       </tbody>
     </table>
